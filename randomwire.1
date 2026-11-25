@@ -1,0 +1,32 @@
+.TH RANDOMWIRE 1 "November 2026" "randomwire 0.2" "User Commands"
+.SH NAME
+randomwire \- screen end-fed random wire antenna lengths
+.SH SYNOPSIS
+.B randomwire
+.RB [ --test ]
+.SH DESCRIPTION
+Interactive ncurses utility that excludes lengths near half-wave multiples across selected amateur bands and ranks remaining intervals by worst-band resonance clearance. Lengths are entered in feet; results include meters.
+.SH OPTIONS
+.TP
+.B --test
+Run numerical regression tests and exit; returns nonzero on failure.
+.SH KEYS
+.TP
+.B Up, Down, Space
+Move and toggle band selection.
+.TP
+.B A, N
+Select all or none.
+.TP
+.B C, W
+Calculate candidates or analyze an existing wire.
+.TP
+.B M, S
+Toggle quarter-wave minimum or edit settings.
+.TP
+.B Q
+Quit or return from results. Enter also returns from results.
+.SH LIMITATIONS
+The default 5 percent exclusion margin is a heuristic. This program does not predict impedance, SWR, tuner compatibility or efficiency. The 60 meter envelope is not a transmit authorization. Verify the installed antenna with an analyzer. Settings are not persistent.
+.SH EXIT STATUS
+0 on normal exit or passing tests; 1 on regression failure; 2 on invalid arguments.
